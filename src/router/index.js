@@ -1,20 +1,29 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
-import Novel from '../views/novel/novel.vue';
+import Router from 'vue-router';
+import constantRouterMapList from './router.config';
 
-Vue.use(VueRouter);
+// hack router push callback
+const originalPush = Router.prototype.push;
+Router.prototype.push = function push(location, onResolve, onReject) {
+  if (onResolve || onReject) return originalPush.call(this, location, onResolve, onReject);
+  return originalPush.call(this, location).catch((err) => err);
+};
 
-const routes = [
-  {
-    path: '/',
-    name: 'Novel',
-    component: Novel,
-  },
+Vue.use(Router);
 
-];
-
-const router = new VueRouter({
-  routes,
+const createRouter = () => new Router({
+  // mode: 'history', //  history模式 需要配置vue.config.js publicPath
+  // base: process.env.BASE_URL,
+  scrollBehavior: () => ({ y: 0 }),
+  routes: constantRouterMapList,
 });
+
+const router = createRouter();
+
+// Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
+export function resetRouter() {
+  const newRouter = createRouter();
+  router.matcher = newRouter.matcher; // reset router
+}
 
 export default router;

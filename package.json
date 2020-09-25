@@ -1,36 +1,38 @@
 {
-  "name": "vue-h5-template",
-  "version": "0.1.0",
+  "name": "vue2-h5-template",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
-    "ss": "vue-cli-service serve",
-    "bb": "vue-cli-service build",
-    "ll": "vue-cli-service lint",
-    "l": "eslint --ext .js,.vue src --fix"
+    "serve": "vue-cli-service serve --open",
+    "stage": "vue-cli-service build --mode staging",
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
-    "core-js": "^3.6.4",
-    "mint-ui": "^2.2.13",
-    "vant": "^2.4.7",
-    "vue": "^2.6.11",
-    "vue-router": "^3.1.5",
-    "vuex": "^3.1.2"
+    "axios": "^0.20.0",
+    "core-js": "^3.6.5",
+    "lodash": "^4.17.20",
+    "regenerator-runtime": "^0.13.7",
+    "vant": "^2.10.8",
+    "vue": "^2.6.12",
+    "vue-router": "^3.4.4",
+    "vuex": "^3.5.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.2.0",
-    "@vue/cli-plugin-eslint": "~4.2.0",
-    "@vue/cli-plugin-router": "~4.2.0",
-    "@vue/cli-plugin-vuex": "~4.2.0",
-    "@vue/cli-service": "~4.2.0",
-    "@vue/eslint-config-airbnb": "^5.0.2",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.7.2",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-vue": "^6.1.2",
-    "less": "^3.0.4",
-    "less-loader": "^5.0.0",
-    "postcss-pxtorem": "^4.0.1",
-    "vue-template-compiler": "^2.6.11"
+    "@vue/cli-plugin-babel": "~4.5.6",
+    "@vue/cli-plugin-eslint": "~4.5.6",
+    "@vue/cli-plugin-router": "~4.5.6",
+    "@vue/cli-plugin-vuex": "~4.5.6",
+    "@vue/cli-service": "~4.5.6",
+    "@vue/eslint-config-airbnb": "^5.1.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-import": "^1.13.0",
+    "eslint": "^7.9.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^4.14.1",
+    "postcss-pxtorem": "^5.1.1",
+    "sass-loader": "^10.0.2",
+    "vue-template-compiler": "^2.6.12"
   }
 }
