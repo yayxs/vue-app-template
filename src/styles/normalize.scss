@@ -13,6 +13,8 @@
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  // /* 基于UI width=750px DPR=2的页面 */
+  // font-size: calc(100vw / 7.5);
 }
 
 /* Sections

@@ -23,7 +23,7 @@ export const constantRoutes = [
 export const asyncRoutes = [
   {
     path: '/',
-    component: import('@/layouts/basic'),
+    component: import('@/layouts/BasicLayout'),
     redirect: '/home',
     meta: {
       title: '首页',
@@ -51,8 +51,7 @@ const constantRouterMapList = [
   },
   {
     path: '/',
-    component: () => import('@/layouts/basic'),
-    redirect: '/home',
+    component: () => import('@/layouts/BasicLayout'),
     meta: {
       title: '首页',
       keepAlive: false,
