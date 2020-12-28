@@ -1,4 +1,4 @@
-const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV);
+const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
 // const defaultSettings = require('./src/config/index.js');
 
 module.exports = {
@@ -18,4 +18,4 @@ module.exports = {
       },
     },
   },
-};
+}

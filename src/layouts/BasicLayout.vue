@@ -15,8 +15,9 @@
     </main>
     <footer>
       <nav>
-        <a v-for="(v, i) in list" :key="v" :class="{ active: index === i }"
-         @click="select(i)">Tab{{ i + 1 }}</a>
+        <a v-for="(v, i) in list" :key="v" :class="{ active: index === i }" @click="select(i)"
+          >Tab{{ i + 1 }}</a
+        >
       </nav>
     </footer>
   </div>
@@ -28,17 +29,17 @@ export default {
   data() {
     return {
       index: 0,
-      list: ['#f66', '#66f', '#f90', '#09f'],
-    };
-  },
-  methods: {
-    select(i) {
-      this.index = i;
-      this.$refs.tabs.style.setProperty('--tab-index', i);
-    },
+      list: ['#f66', '#66f', '#f90', '#09f']
+    }
   },
   mounted() {},
-};
+  methods: {
+    select(i) {
+      this.index = i
+      this.$refs.tabs.style.setProperty('--tab-index', i)
+    }
+  }
+}
 </script>
 <style scoped lang="scss">
 .box-container {
