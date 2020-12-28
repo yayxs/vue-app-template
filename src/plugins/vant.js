@@ -11,4 +11,5 @@ Vue.use(Cell);
 Vue.use(List);
 Vue.use(Form);
 Vue.use(Field);
-Vue.use(Tabbar).use(TabbarItem);
+Vue.use(Tabbar);
+Vue.use(TabbarItem);

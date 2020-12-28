@@ -1,11 +1,14 @@
 {
-  "name": "vue2-h5-template",
+  "name": "vue2-h5-mall-template",
   "version": "0.0.2",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "stage": "vue-cli-service build --mode staging",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "lint:style": "stylelint-config-prettier-check",
+    "clear": "rimraf node_modules"
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
@@ -24,15 +27,28 @@
     "@vue/cli-plugin-router": "~4.5.6",
     "@vue/cli-plugin-vuex": "~4.5.6",
     "@vue/cli-service": "~4.5.6",
-    "@vue/eslint-config-airbnb": "^5.1.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.13.0",
+    "commitizen": "^4.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "dart-sass": "^1.25.0",
     "eslint": "^7.9.0",
     "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.14.1",
     "postcss-pxtorem": "^5.1.1",
+    "prettier": "^2.2.1",
+    "sass": "^1.30.0",
     "sass-loader": "^10.0.2",
+    "stylelint": "^13.8.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recess-order": "^2.3.0",
     "vue-template-compiler": "^2.6.12"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

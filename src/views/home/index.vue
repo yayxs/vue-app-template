@@ -1,24 +1,14 @@
 <template>
-<div>
-  首页
-</div>
+  <div class="home">首页</div>
 </template>
 
 <script>
 export default {
   data() {
-    return {
-
-    };
+    return {}
   },
-  methods: {
-
-  },
-  mounted() {
-
-  },
-};
+  mounted() {},
+  methods: {}
+}
 </script>
-<style scoped lang='scss'>
-
-</style>
+<style scoped lang="scss"></style>
