@@ -8,6 +8,7 @@
 <script>
   import HelloWorld from './components/HelloWorld.vue'
   import axios from 'axios'
+  import { Random } from 'mockjs'
   export default {
     name: 'App',
     components: {
@@ -16,7 +17,13 @@
     mounted() {
       axios('/user/userinfo').then((res) => {
         console.log(res)
+        console.log(this.handleRandomImage())
       })
+    },
+    methods: {
+      handleRandomImage(width = 200, height = 200) {
+        return `https://picsum.photos/${width}/${height}?random=${Random.guid()}`
+      },
     },
   }
 </script>
