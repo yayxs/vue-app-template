@@ -25,9 +25,14 @@
           :rules="[{ required: true, message: '请填写密码' }]"
         />
         <section class="login-btn">
-          <van-button loading type="info" loading-text="加载中..." native-type="submit"
-            >登录</van-button
+          <van-button
+            loading
+            type="info"
+            loading-text="加载中..."
+            native-type="submit"
           >
+            登录
+          </van-button>
         </section>
       </van-form>
     </section>
@@ -35,22 +40,22 @@
 </template>
 
 <script>
-export default {
-  name: 'Login',
-  data() {
-    return {
-      username: '',
-      password: ''
-    }
-  },
-  mounted() {},
-  methods: {
-    onSubmit() {
-      console.log('点击了登录按钮')
-    }
+  export default {
+    name: 'Login',
+    data() {
+      return {
+        username: '',
+        password: '',
+      }
+    },
+    mounted() {},
+    methods: {
+      onSubmit() {
+        console.log('点击了登录按钮')
+      },
+    },
   }
-}
 </script>
 <style scoped lang="scss">
-@import './index.scss';
+  @import './index.scss';
 </style>

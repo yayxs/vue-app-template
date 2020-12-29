@@ -1,41 +1,27 @@
-<div align="center"><img width="200" src=""/>
+<div align="center"><img width="200" src="https://yayxs.github.io/avatar.jpg"/>
 <h1> vue2-h5-template</h1>
-<h3>一款基于Vue2.x+VantUI实现的移动端h5实现方案</h3>
-<h3>A mobile h5 implementation solution based on Vue2.x+ VantUI</h3>
+<h3>一款基于Vue + VantUI实现的移动端h5商城实现方案</h3>
+<h3>A mobile h5 implementation solution based on Vue + VantUI</h3>
 </div>
 
 ## 演示地址
 
-#### - [🚀 演示地址：vue2-h5-template]()
-
-#### - [🚀 国内备份地址：vue2-h5-template]()
+- [🚀 演示地址：vue-app-template vu2版本]()
 
 
 ## 安装
 
 ```bash
 # 克隆项目
-git clone https://github.com/yayxs/vue2-h5-template.git
+git clone https://github.com/yayxs/vue-app-template.git
 # 进入项目目录
-cd vue2-h5-template
+cd vue-app-template
 # 安装依赖
 yarn
 # 本地开发 启动项目
 yarn serve
 ```
 
-## install
-
-```bash
-# Clone project
-git clone https://github.com/yayxs/vue2-h5-template.git
-# Enter project directory
-cd vue2-h5-template
-# Installation dependency
-yarn
-# Start project
-yarn serve
-```
 
 ## 适配方案
 
@@ -129,6 +115,6 @@ css: {
 
 ## 鸣谢
 
-#### - [staven630/vue-cli4-config](https://github.com/staven630/vue-cli4-config)
+- [staven630/vue-cli4-config](https://github.com/staven630/vue-cli4-config)
 
-#### - [sunniejs/vue-h5-template](https://github.com/sunniejs/vue-h5-template)
+- [sunniejs/vue-h5-template](https://github.com/sunniejs/vue-h5-template)
