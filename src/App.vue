@@ -1,23 +1,25 @@
 <template>
   <div id="app">
     <keep-alive>
-      <router-view />
+      <router-view v-if="needKeepAlive" :key="key" />
     </keep-alive>
+    <router-view v-if="!needKeepAlive" :key="key" />
+    <vast-tab-bar v-if="needShowTab" />
   </div>
 </template>
 <script>
   export default {
     name: 'App',
+    computed: {
+      key() {
+        return this.$route.fullPath
+      },
+      needKeepAlive() {
+        return this.$route.meta.keepAlive
+      },
+      needShowTab() {
+        return this.$route.meta.showTab
+      },
+    },
   }
 </script>
-<style lang="scss">
-  html,
-  body,
-  #app {
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    background-color: #efeff4;
-    -webkit-overflow-scrolling: touch;
-  }
-</style>

@@ -1,14 +1,40 @@
 <template>
-  <div class="home">首页</div>
+  <div class="home-page">
+    <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
+      <vast-header></vast-header>
+      <vast-swiper></vast-swiper>
+    </van-pull-refresh>
+  </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {}
-  },
-  mounted() {},
-  methods: {}
-}
+  import VastHeader from './modules/Header'
+  import VastSwiper from './modules/Swiper'
+  export default {
+    components: {
+      VastHeader,
+      VastSwiper,
+    },
+    data() {
+      return {
+        count: 0,
+        isLoading: false,
+      }
+    },
+    mounted() {},
+    methods: {
+      onRefresh() {
+        setTimeout(() => {
+          Toast('刷新成功')
+          this.isLoading = false
+          this.count++
+        }, 1000)
+      },
+    },
+  }
 </script>
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+  .home-page {
+    height: 20px;
+  }
+</style>

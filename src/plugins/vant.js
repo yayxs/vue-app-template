@@ -2,7 +2,19 @@
  * desc UI组件库按需加载
  */
 import Vue from 'vue'
-import { Button, List, Cell, Tabbar, TabbarItem, Form, Field } from 'vant'
+import {
+  Button,
+  List,
+  Cell,
+  Tabbar,
+  TabbarItem,
+  Form,
+  Field,
+  PullRefresh,
+  Swipe,
+  SwipeItem,
+  Image as VanImage,
+} from 'vant'
 
 Vue.use(Button)
 Vue.use(Cell)
@@ -11,3 +23,7 @@ Vue.use(Form)
 Vue.use(Field)
 Vue.use(Tabbar)
 Vue.use(TabbarItem)
+Vue.use(PullRefresh)
+Vue.use(Swipe)
+Vue.use(SwipeItem)
+Vue.use(VanImage)

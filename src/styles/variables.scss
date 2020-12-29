@@ -1,4 +1,6 @@
-// desc 全局主题变量配置
+/**
+ * @description 全局变量配置
+ */
 //默认动画
 $base-transition: all 0.2s;
 //默认动画时长
@@ -11,3 +13,6 @@ $base-main-height: 100vh;
 $base-main-width:100vw;
 // 字体
 $base-font-family: PingFang SC;
+// tabbar 点击颜色
+$tabbar-active-color:'#FE4F70';
+$tabbar-inactive-color:'#949497'

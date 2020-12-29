@@ -9,11 +9,35 @@
         style="z-index: 100"
         @change="handleTabBarChange"
       >
-        <van-tabbar-item name="index" to="/index" icon="home-o">
+        <van-tabbar-item name="home" to="/home" icon="home-o">
           首页
         </van-tabbar-item>
-        <van-tabbar-item name="classify">分类</van-tabbar-item>
-        <van-tabbar-item icon="friends-o">购物车</van-tabbar-item>
+        <van-tabbar-item name="classify" to="/classify">
+          <span>分类</span>
+          <img
+            slot="icon"
+            slot-scope="props"
+            :src="
+              props.active
+                ? iconImgsList.icon_classify.active
+                : iconImgsList.icon_classify.default
+            "
+            alt="分类"
+          />
+        </van-tabbar-item>
+        <van-tabbar-item :info="cartCount">
+          <span>购物车</span>
+          <img
+            slot="icon"
+            slot-scope="props"
+            :src="
+              props.active
+                ? iconImgsList.icon_cart.active
+                : iconImgsList.icon_cart.default
+            "
+            alt="购物车"
+          />
+        </van-tabbar-item>
         <van-tabbar-item name="mine" to="/mine">
           <span>我的</span>
           <img
@@ -24,7 +48,7 @@
                 ? iconImgsList.icon_mine.default
                 : iconImgsList.icon_mine.active
             "
-            alt=""
+            alt="我的"
           />
         </van-tabbar-item>
       </van-tabbar>
@@ -32,6 +56,8 @@
   </div>
 </template>
 <script>
+  import { createNamespacedHelpers } from 'vuex'
+  const { mapGetters } = createNamespacedHelpers('shoppingCart')
   export default {
     name: 'VastTabBar',
     data() {
@@ -57,8 +83,18 @@
         },
       }
     },
+    computed: {
+      ...mapGetters(['cartCount']),
+    },
+    created() {
+      this.$baseEventBus.$on('busChangeTag', (tag) => {
+        this.active = tag
+      })
+    },
     methods: {
-      handleTabBarChange() {},
+      handleTabBarChange(active) {
+        console.log('---now click---', active)
+      },
     },
   }
 </script>

@@ -1,33 +1,45 @@
-const routesConfig = {
-  constantRouter: [
+const routerConfig = {
+  constantRoutes: [
     {
-      path: '/nopermission',
-      name: 'Nopermission',
-      meta: {
-        index: 1,
-      },
+      path: '/login',
+      name: 'Login',
       component: () =>
-        import(
-          /* webpackChunkName: "NoPermission" */ '@/views/error/NoPermission'
-        ),
+        import(/* webpackChunkName: "login" */ '@/views/login/index'),
+      hidden: true,
     },
     {
-      path: '*',
+      path: '/register',
+      name: 'Register',
+      component: () =>
+        import(/* webpackChunkName: "register" */ '@/views/register/index'),
+      hidden: true,
+    },
+    {
+      path: '/401',
+      name: '401',
+      component: () =>
+        import(/* webpackChunkName: "401" */ '@/views/error/401'),
+      hidden: true,
+    },
+
+    {
+      path: '/404',
       name: '404',
       component: () =>
         import(/* webpackChunkName: "404" */ '@/views/error/404'),
     },
+  ],
+  asyncRoutes: [
     {
-      // 默认页面
       path: '/',
-      component: () => import(/* webpackChunkName: "index" */ '@/views/index'),
-      redirect: '/index',
+      redirect: '/home',
       children: [
         {
           path: 'home',
           name: 'Home',
           meta: {
             index: 1,
+            title: '首页',
           },
           component: () => import('@/views/home/index.vue'),
         },
@@ -55,8 +67,13 @@ const routesConfig = {
           },
           component: () => import('@/views/mine/index.vue'),
         },
+        {
+          path: '*',
+          redirect: '/404',
+          hidden: true,
+        },
       ],
     },
   ],
 }
-module.exports = routesConfig
+module.exports = routerConfig

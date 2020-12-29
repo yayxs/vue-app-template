@@ -7,17 +7,17 @@ import { baseApi } from '@/config'
 const service = axios.create({
   baseURL: baseApi, // url = base api url + request url
   withCredentials: true, // send cookies when cross-domain requests
-  timeout: 5000 // request timeout
+  timeout: 5000, // request timeout
 })
 
 // request拦截器 request interceptor
 service.interceptors.request.use(
-  config => {
+  (config) => {
     // 不传递默认开启loading
     if (!config.hideloading) {
       // loading
       Toast.loading({
-        forbidClick: true
+        forbidClick: true,
       })
     }
     if (store.getters.token) {
@@ -25,7 +25,7 @@ service.interceptors.request.use(
     }
     return config
   },
-  error => {
+  (error) => {
     // do something with request error
     console.log(error) // for debug
     return Promise.reject(error)
@@ -33,7 +33,7 @@ service.interceptors.request.use(
 )
 // respone拦截器
 service.interceptors.response.use(
-  response => {
+  (response) => {
     Toast.clear()
     const res = response.data
     if (res.status && res.status !== 200) {
@@ -45,7 +45,7 @@ service.interceptors.response.use(
     }
     return Promise.resolve(res)
   },
-  error => {
+  (error) => {
     Toast.clear()
     console.log(`err${error}`) // for debug
     return Promise.reject(error)
