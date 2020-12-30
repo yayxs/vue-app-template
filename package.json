@@ -3,13 +3,14 @@
   "version": "0.0.2",
   "private": true,
   "scripts": {
-    "dev":"cross-env NODE_ENV=development vue-cli-service serve",
+    "dev": "cross-env NODE_ENV=development vue-cli-service serve",
     "serve": "vue-cli-service serve",
     "serve:open": "vue-cli-service serve --open",
     "stage": "vue-cli-service build --mode staging",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "lint:style": "stylelint-config-prettier-check",
+    "inspect": "vue-cli-service inspect",
     "clear": "rimraf node_modules"
   },
   "dependencies": {
@@ -53,5 +54,16 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }

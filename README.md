@@ -1,12 +1,12 @@
-<div align="center"><img width="200" src="https://yayxs.github.io/avatar.jpg"/>
+<div align="center"><img width="100" src="https://yayxs.github.io/avatar.jpg"/>
 <h1> vue2-h5-template</h1>
 <h3>一款基于Vue + VantUI实现的移动端h5商城实现方案</h3>
 <h3>A mobile h5 implementation solution based on Vue + VantUI</h3>
 </div>
 
-## 演示地址
+<!-- ## 演示地址
 
-- [🚀 演示地址：vue-app-template vu2版本]()
+- [🚀 演示地址：vue-app-template vu2版本]() -->
 
 
 ## 安装

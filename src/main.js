@@ -8,6 +8,9 @@ import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 import './plugins'
 import './components' // 自动注册通用全局组件
+// mock
+// WARNING: `mockjs` NOT SUPPORT `IE` PLEASE DO NOT USE IN `production` ENV.
+import '../mock'
 Vue.config.productionTip = false
 
 new Vue({

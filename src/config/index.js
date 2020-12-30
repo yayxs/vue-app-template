@@ -3,4 +3,5 @@
  */
 const settingConfig = require('./setting.config')
 const routerConfig = require('./router.config')
-module.exports = Object.assign({}, settingConfig, routerConfig)
+const requestConfig = require('./request.config')
+module.exports = Object.assign({}, settingConfig, routerConfig, requestConfig)

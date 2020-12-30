@@ -10,6 +10,7 @@
 <script>
   import VastHeader from './modules/Header'
   import VastSwiper from './modules/Swiper'
+  import { getBannerApi } from '@/api/home'
   export default {
     components: {
       VastHeader,
@@ -21,7 +22,11 @@
         isLoading: false,
       }
     },
-    mounted() {},
+    mounted() {
+      getBannerApi().then((res) => {
+        console.log(res)
+      })
+    },
     methods: {
       onRefresh() {
         setTimeout(() => {
