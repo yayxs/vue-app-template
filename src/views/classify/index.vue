@@ -2,18 +2,48 @@
   <div class="classify-page">
     <vast-header>商品分类</vast-header>
     <section ref="classifyRef" class="classify-wrap">
-      <vast-scroll :scroll-data="classifyData" class="nav-side-warpper">
+      <vast-scroll :scroll-data="categoryData" class="nav-side-warpper">
         <ul class="nav-side">
           <li
-            v-for="(item, index) in classifyData"
+            v-for="(item, index) in categoryData"
             :key="index"
             :class="{ active: currentIndex === index }"
             @click="selectMenu(index)"
           >
-            <span>{{ item.label.slice(0, 2) }}</span>
-            <span>{{ item.label.slice(2) }}</span>
+            <span>{{ item.name.slice(0, 2) }}</span>
+            <span>{{ item.name.slice(2) }}</span>
           </li>
         </ul>
+      </vast-scroll>
+      <vast-scroll class="main-content-warpper" :scroll-data="categoryData">
+        <div class="swiper-container">
+          <template v-for="(item, index) in categoryData">
+            <div
+              v-if="currentIndex === index"
+              :key="index"
+              class="swiper-slide"
+            >
+              <vast-image
+                v-if="item.imgUrl"
+                class="category-main-img"
+                :src="item.imgUrl"
+              ></vast-image>
+              <div v-for="(products, index) in item.list" :key="index">
+                <p class="goods-title">{{ products.title }}</p>
+                <div class="category-list">
+                  <div
+                    v-for="(product, index) in products.productList"
+                    :key="index"
+                    class="product-item"
+                  >
+                    <img class="item-img" :src="product.imgUrl" />
+                    <p class="product-title">{{ product.title }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
       </vast-scroll>
     </section>
   </div>
@@ -25,79 +55,15 @@
     data() {
       return {
         currentIndex: 0, // 默认选中第一个
-        classifyData: [
-          {
-            label: '热门推荐',
-            active: true,
-          },
-          {
-            label: '手机数码',
-            active: false,
-          },
-          {
-            label: '电脑办公',
-            active: false,
-          },
-          {
-            label: '计生情趣',
-            active: false,
-          },
-          {
-            label: '美妆护肤',
-            active: false,
-          },
-
-          {
-            label: '个人清洁',
-            active: false,
-          },
-          {
-            label: '汽车生活',
-            active: false,
-          },
-          {
-            label: '男装',
-            active: false,
-          },
-          {
-            label: '女装',
-            active: false,
-          },
-          {
-            label: '超市',
-            active: false,
-          },
-          {
-            label: '户外运动',
-            active: false,
-          },
-          {
-            label: '男装',
-            active: false,
-          },
-          {
-            label: '女装',
-            active: false,
-          },
-          {
-            label: '超市',
-            active: false,
-          },
-          {
-            label: '户外运动',
-            active: false,
-          },
-          {
-            label: '其他',
-            active: false,
-          },
-        ], // 分类的数据
+        categoryData: [],
       }
     },
-    mounted() {},
+    mounted() {
+      this.categoryData = require('../../../mock/json/classify.json').categoryData
+    },
     methods: {
-      selectMenu() {
-        console.log('选中左侧的一级分类')
+      selectMenu(index) {
+        this.currentIndex = index
       },
     },
   }
@@ -137,6 +103,23 @@
             }
           }
         }
+      }
+      .main-content-warpper {
+        width: 80%;
+        height: 100%;
+        padding: 0 16px;
+        background-color: #fff;
+        padding-bottom: 30px;
+        @include bb;
+        .swiper-container{
+          width: 100%;
+          .swiper-slide{
+            width: 100%;
+            padding-top: 20px;
+            .goods-title{
+              font-size: 14px;
+            }
+          }
       }
     }
   }
