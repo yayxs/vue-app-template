@@ -44,6 +44,7 @@ const routes = [
     name: 'ShopCart',
     meta: {
       index: 1,
+      showTab: true,
     },
     component: () => import('@/views/shopCart/index.vue'),
   },
@@ -52,6 +53,7 @@ const routes = [
     name: 'Mine',
     meta: {
       index: 1,
+      showTab: true,
     },
     component: () => import('@/views/mine/index.vue'),
   },

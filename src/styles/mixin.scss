@@ -34,3 +34,15 @@
   flex-wrap: $fw;
   -webkit-flex-wrap: $fw;
 }
+
+//flex justify-content
+@mixin fj($type: space-between) {
+  display: flex;
+  justify-content: $type;
+}
+
+@mixin bb {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}

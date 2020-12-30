@@ -14,6 +14,8 @@ import {
   Swipe,
   SwipeItem,
   Image as VanImage,
+  Loading,
+  Lazyload,
 } from 'vant'
 
 Vue.use(Button)
@@ -27,3 +29,5 @@ Vue.use(PullRefresh)
 Vue.use(Swipe)
 Vue.use(SwipeItem)
 Vue.use(VanImage)
+Vue.use(Loading)
+Vue.use(Lazyload)

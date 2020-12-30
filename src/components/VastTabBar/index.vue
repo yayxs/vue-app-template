@@ -25,7 +25,7 @@
             alt="分类"
           />
         </van-tabbar-item>
-        <van-tabbar-item :info="cartCount">
+        <van-tabbar-item :info="cartCount" name="shopCart" to="/shopCart">
           <span>购物车</span>
           <img
             slot="icon"
@@ -45,8 +45,8 @@
             slot-scope="props"
             :src="
               props.active
-                ? iconImgsList.icon_mine.default
-                : iconImgsList.icon_mine.active
+                ? iconImgsList.icon_mine.active
+                : iconImgsList.icon_mine.default
             "
             alt="我的"
           />

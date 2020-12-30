@@ -25,7 +25,7 @@ const genHandler = (options) => {
     const tmpKey = i + 1
     data.push({
       _id: tmpKey,
-      img: vastHomeBannerImgs[i],
+      img: vastHomeBannerImgs[i]['img'],
       type: 1,
       updatedAt: Mock.mock('@datetime'),
     })

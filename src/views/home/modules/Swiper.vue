@@ -13,20 +13,21 @@
 </template>
 
 <script>
+  import { createNamespacedHelpers } from 'vuex'
+  const { mapState } = createNamespacedHelpers('home')
   export default {
     name: 'HomeSwiper',
-    props: {
-      banner: {
-        type: Array,
-        default() {
-          return []
-        },
-      },
-    },
     data() {
       return {}
     },
-    mounted() {},
+    computed: {
+      ...mapState({
+        banner: (state) => state.bannerList,
+      }),
+    },
+    mounted() {
+      console.log(this.banner)
+    },
     methods: {
       handleOnNavigateDetail() {
         console.log('点击了跳转')

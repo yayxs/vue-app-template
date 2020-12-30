@@ -10,7 +10,8 @@
 <script>
   import VastHeader from './modules/Header'
   import VastSwiper from './modules/Swiper'
-  import { getBannerApi } from '@/api/home'
+  import { createNamespacedHelpers } from 'vuex'
+  const { mapActions } = createNamespacedHelpers('home')
   export default {
     components: {
       VastHeader,
@@ -23,11 +24,12 @@
       }
     },
     mounted() {
-      getBannerApi().then((res) => {
-        console.log(res)
-      })
+      this.getHomeBannerAction()
     },
     methods: {
+      ...mapActions({
+        getHomeBannerAction: 'getHomeBannerAction',
+      }),
       onRefresh() {
         setTimeout(() => {
           Toast('刷新成功')
