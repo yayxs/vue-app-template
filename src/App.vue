@@ -1,15 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
+  <div id="app">
+    <keep-alive>
+      <router-view v-if="needKeepAlive" :key="key" />
+    </keep-alive>
+    <router-view v-if="!needKeepAlive" :key="key" />
+    <vast-tab-bar v-if="needShowTab" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  export default {
+    name: 'App',
+    computed: {
+      key() {
+        return this.$route.fullPath
+      },
+      needKeepAlive() {
+        return this.$route.meta.keepAlive
+      },
+      needShowTab() {
+        return this.$route.meta.showTab
+      },
+    },
   }
-}
 </script>
