@@ -11,6 +11,7 @@
   import VastHeader from './modules/Header'
   import VastSwiper from './modules/Swiper'
   import { createNamespacedHelpers } from 'vuex'
+  import { geCateListApi } from '@/api/home'
   const { mapActions } = createNamespacedHelpers('home')
   export default {
     components: {
@@ -25,11 +26,16 @@
     },
     mounted() {
       this.getHomeBannerAction()
+      this.getHomeCateList()
     },
     methods: {
       ...mapActions({
         getHomeBannerAction: 'getHomeBannerAction',
       }),
+      async getHomeCateList() {
+        const res = await geCateListApi()
+        console.log(res)
+      },
       onRefresh() {
         setTimeout(() => {
           Toast('刷新成功')

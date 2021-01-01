@@ -8,3 +8,12 @@ export function getBannerApi() {
     method: 'get',
   })
 }
+/**
+ * 获取首页的分类数据
+ */
+export function geCateListApi() {
+  return request({
+    url: '/home/cateList',
+    method: 'get',
+  })
+}

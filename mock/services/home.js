@@ -32,7 +32,123 @@ const vastHomeBannerImgs = [
   },
 ]
 
-const genHandler = (options) => {
+const categoryList = [
+  {
+    name: '天猫新品',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '今日爆款',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '天猫国际',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '饿了么',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '天猫超市',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '充值中心',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '机票酒店',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '金币庄园',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '阿里拍卖',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '淘宝吃货',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '今日爆款',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '分类',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '天猫美食',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '阿里健康',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '口碑生活',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '闲鱼',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '会员中心',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '造点新货',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+  {
+    name: '土货鲜食',
+    icon:
+      'https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1',
+  },
+]
+
+const genCateListHandler = (options) => {
+  const queryParameters = getQueryParameters(options)
+  console.log('queryParameters', queryParameters)
+
+  const data = []
+  for (let i = 0, len = categoryList.length; i < len; i++) {
+    const tmpKey = i + 1
+    data.push({
+      _id: tmpKey,
+      icon: categoryList[i]['icon'],
+      name: categoryList[i]['name'],
+      updatedAt: Mock.mock('@datetime'),
+    })
+  }
+
+  return builder(data)
+}
+
+const genBannerHandler = (options) => {
   const queryParameters = getQueryParameters(options)
   console.log('queryParameters', queryParameters)
 
@@ -49,5 +165,5 @@ const genHandler = (options) => {
 
   return builder(data)
 }
-
-Mock.mock(/\/home\/banner/, 'get', genHandler)
+Mock.mock(/\/home\/banner/, 'get', genBannerHandler)
+Mock.mock(/\/home\/cateList/, 'get', genCateListHandler)
