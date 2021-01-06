@@ -7,6 +7,7 @@
     <vast-tab-bar v-if="needShowTab" />
   </div>
 </template>
+
 <script>
   export default {
     name: 'App',

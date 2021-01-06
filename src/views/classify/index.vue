@@ -15,36 +15,6 @@
           </li>
         </ul>
       </vast-scroll>
-      <vast-scroll class="main-content-warpper" :scroll-data="categoryData">
-        <div class="swiper-container">
-          <template v-for="(item, index) in categoryData">
-            <div
-              v-if="currentIndex === index"
-              :key="index"
-              class="swiper-slide"
-            >
-              <vast-image
-                v-if="item.imgUrl"
-                class="category-main-img"
-                :src="item.imgUrl"
-              ></vast-image>
-              <div v-for="(products, index) in item.list" :key="index">
-                <p class="goods-title">{{ products.title }}</p>
-                <div class="category-list">
-                  <div
-                    v-for="(product, index) in products.productList"
-                    :key="index"
-                    class="product-item"
-                  >
-                    <img class="item-img" :src="product.imgUrl" />
-                    <p class="product-title">{{ product.title }}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </template>
-        </div>
-      </vast-scroll>
     </section>
   </div>
 </template>
@@ -59,7 +29,7 @@
       }
     },
     mounted() {
-      this.categoryData = require('../../../mock/json/classify.json').categoryData
+      this.categoryData = []
     },
     methods: {
       selectMenu(index) {
@@ -111,15 +81,16 @@
         background-color: #fff;
         padding-bottom: 30px;
         @include bb;
-        .swiper-container{
+        .swiper-container {
           width: 100%;
-          .swiper-slide{
+          .swiper-slide {
             width: 100%;
             padding-top: 20px;
-            .goods-title{
+            .goods-title {
               font-size: 14px;
             }
           }
+        }
       }
     }
   }

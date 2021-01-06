@@ -64,21 +64,17 @@
       return {
         active: 0, // 默认绑定选中标签的索引值
         iconImgsList: {
-          icon_home: {
-            default: require('@/assets/tabbar/home.png'),
-            active: require('@/assets/tabbar/home_active.png'),
-          },
           icon_classify: {
-            default: require('@/assets/tabbar/classify.png'),
-            active: require('@/assets/tabbar/classify_active.png'),
+            default: require('@/assets/images/tabbar/classify.png'),
+            active: require('@/assets/images/tabbar/classify_active.png'),
           },
           icon_cart: {
-            default: require('@/assets/tabbar/cart.png'),
-            active: require('@/assets/tabbar/cart_active.png'),
+            default: require('@/assets/images/tabbar/cart.png'),
+            active: require('@/assets/images/tabbar/cart_active.png'),
           },
           icon_mine: {
-            default: require('@/assets/tabbar/mine.png'),
-            active: require('@/assets/tabbar/mine_active.png'),
+            default: require('@/assets/images/tabbar/mine.png'),
+            active: require('@/assets/images/tabbar/mine_active.png'),
           },
         },
       }
