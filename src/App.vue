@@ -1,26 +1,29 @@
 <template>
-  <div id="app">
-    <keep-alive>
-      <router-view v-if="needKeepAlive" :key="key" />
-    </keep-alive>
-    <router-view v-if="!needKeepAlive" :key="key" />
-    <vast-tab-bar v-if="needShowTab" />
-  </div>
+  <img alt="Vue logo"
+src="./assets/logo.png"
+/>
+  <HelloWorld msg="Hello Vue 3 + Vite" />
 </template>
 
-<script>
-  export default {
+<script lang="ts">
+  import { defineComponent } from 'vue';
+  import HelloWorld from './components/HelloWorld.vue';
+
+  export default defineComponent({
     name: 'App',
-    computed: {
-      key() {
-        return this.$route.fullPath
-      },
-      needKeepAlive() {
-        return this.$route.meta.keepAlive
-      },
-      needShowTab() {
-        return this.$route.meta.showTab
-      },
+    components: {
+      HelloWorld,
     },
-  }
+  });
 </script>
+
+<style>
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
+</style>

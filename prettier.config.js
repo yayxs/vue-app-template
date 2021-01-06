@@ -1,16 +1,45 @@
+// module.exports = {
+//   printWidth: 80,
+//   tabWidth: 2,
+//   useTabs: false,
+//   semi: false,
+//   singleQuote: true,
+//   quoteProps: 'as-needed',
+//   jsxSingleQuote: false,
+//   trailingComma: 'es5',
+//   bracketSpacing: true,
+//   jsxBracketSameLine: false,
+//   arrowParens: 'always',
+//   htmlWhitespaceSensitivity: 'ignore',
+//   vueIndentScriptAndStyle: true,
+//   endOfLine: 'lf',
+// }
+
 module.exports = {
-  printWidth: 80,
+  printWidth: 100,
   tabWidth: 2,
   useTabs: false,
-  semi: false,
+  semi: true,
+  vueIndentScriptAndStyle: true,
   singleQuote: true,
   quoteProps: 'as-needed',
-  jsxSingleQuote: false,
-  trailingComma: 'es5',
   bracketSpacing: true,
+  trailingComma: 'es5',
   jsxBracketSameLine: false,
+  jsxSingleQuote: false,
   arrowParens: 'always',
-  htmlWhitespaceSensitivity: 'ignore',
-  vueIndentScriptAndStyle: true,
+  insertPragma: false,
+  requirePragma: false,
+  proseWrap: 'never',
+  htmlWhitespaceSensitivity: 'strict',
   endOfLine: 'lf',
-}
+  rangeStart: 0,
+  overrides: [
+    {
+      files: '*.md',
+      options: {
+        tabWidth: 2,
+      },
+    },
+  ],
+};
