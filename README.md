@@ -1,9 +1,8 @@
-# vue 商城模板
-
+# vue3 vant4 shop mall vite
 
 ## Vite
 
- - node 版本在 12以上
+- node 版本在 12 以上
 
 ```sh
 $ yarn create @vitejs/app
@@ -11,7 +10,10 @@ $ yarn create @vitejs/app
 
 - `index.html` 构建入口文件
 
-## 规范化
+## 代码校验
 
-### `ts/js` 格式化
+### stylelint
 
+```ba
+
+```
