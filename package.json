@@ -5,8 +5,9 @@
     "dev": "vite",
     "build": "vuedx-typecheck . && vite build",
     "vite:help": "px vite --help",
-    "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore .",
-    "lint:style": "stylelint src/**/*.{css,scss,vue}",
+    "lint:eslint": "eslint --ext .ts,vue --ignore-path .gitignore .",
+    "lint:prettier": "prettier --write --loglevel warn \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
+    "lint:stylelint": "stylelint src/**/*.{css,scss,vue}",
     "lint:markup": "vti diagnostics"
   },
   "dependencies": {
@@ -23,6 +24,7 @@
     "@vuedx/typecheck": "^0.4.1",
     "@vuedx/typescript-plugin-vue": "^0.4.1",
     "autoprefixer": "^10.1.0",
+    "commitizen": "^4.2.2",
     "eslint": "^7.17.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-prettier": "^3.3.1",
@@ -46,10 +48,5 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": "eslint --fix",
-    "*.{css,scss,vue}": "stylelint --fix",
-    "*": "prettier -w -u"
   }
 }
