@@ -1,9 +1,5 @@
-/dist/*
-.local
-.output.js
-/node_modules/**
-
-**/*.svg
-**/*.sh
-
-/public/*
+# Ignore artifacts:
+# 提示！.prettierignore 基于 .gitignore 和 .eslintignore（如果你有的话）。
+# docs https://prettier.io/docs/en/install.html
+build
+coverage

@@ -1,26 +1,22 @@
-# .eslintignore
+public
+dist
+*.d.ts
 
-*.sh
 node_modules
-lib
-*.md
-*.scss
-*.woff
-*.ttf
-.vscode
+.DS_Store
+dist
+dist-ssr
+*.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+tests/**/coverage/
+
+# Editor directories and files
 .idea
-/dist/
-/mock/
-/public
-/docs
 .vscode
-.local
-/bin
-/build
-/config
-Dockerfile
-vue.config.js
-commit-lint.js
-postcss.config.js
-stylelint.config.js
-commitlint.config.js
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

@@ -1,21 +1,27 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "baseUrl": "./",
+    "target": "esnext",
+    "isolatedModules": true,
+    "useDefineForClassFields": true,
     "module": "esnext",
-    "strict": true,
-    "jsx": "react",
-    "importHelpers": true,
     "moduleResolution": "node",
+    "strict": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
     "sourceMap": true,
-    "baseUrl": ".",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "types": ["vite/client", "node"],
     "paths": {
-      "/@/*": ["src/*"]
-    },
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+      "@/*": ["src/*"],
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@store/*": ["src/store/*"],
+      "@views/*": ["src/views/*"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "exclude": ["node_modules", "dist", "**/*.js"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["node_modules", "dist"]
 }
