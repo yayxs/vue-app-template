@@ -3,9 +3,11 @@ lockfileVersion: 5.3
 specifiers:
   '@types/node': ^16.11.10
   '@vitejs/plugin-vue': ^1.10.1
+  axios: ^0.24.0
   eslint: ^8.3.0
   husky: ^7.0.4
   lint-staged: ^12.1.2
+  pinia: ^2.0.4
   prettier: ^2.5.0
   sass: ^1.43.5
   typescript: ^4.5.2
@@ -16,6 +18,8 @@ specifiers:
   vue-tsc: ^0.3.0
 
 dependencies:
+  axios: registry.npmmirror.com/axios/0.24.0
+  pinia: registry.npmmirror.com/pinia/2.0.4_typescript@4.5.2+vue@3.2.23
   vant: registry.npmmirror.com/vant/3.3.1_vue@3.2.23
   vue: registry.npmmirror.com/vue/3.2.23
 
@@ -834,6 +838,12 @@ packages:
       '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.23
     dev: false
 
+  registry.npmmirror.com/@vue/devtools-api/6.0.0-beta.20.1:
+    resolution: {integrity: sha512-R2rfiRY+kZugzWh9ZyITaovx+jpU4vgivAEAiz80kvh3yviiTU3CBuGuyWpSwGz9/C7TkSWVM/FtQRGlZ16n8Q==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/devtools-api/download/@vue/devtools-api-6.0.0-beta.20.1.tgz}
+    name: '@vue/devtools-api'
+    version: 6.0.0-beta.20.1
+    dev: false
+
   registry.npmmirror.com/@vue/reactivity/3.2.23:
     resolution: {integrity: sha512-8RGVr/5Kpgb/EkCjgHXqttgA5IMc6n0lIXFY4TVbMkzdXrvaIhzBd7Te44oIDsTSYVKZLpfHd6/wEnuDqE8vFw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/reactivity/download/@vue/reactivity-3.2.23.tgz}
     name: '@vue/reactivity'
@@ -978,6 +988,16 @@ packages:
     name: assert-never
     version: 1.2.1
     dev: true
+
+  registry.npmmirror.com/axios/0.24.0:
+    resolution: {integrity: sha1-gE5voeS5xSiFAd2d/1anoJQNINY=, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/axios/download/axios-0.24.0.tgz}
+    name: axios
+    version: 0.24.0
+    dependencies:
+      follow-redirects: registry.npmmirror.com/follow-redirects/1.14.5
+    transitivePeerDependencies:
+      - debug
+    dev: false
 
   registry.npmmirror.com/babel-walk/3.0.0-canary-5:
     resolution: {integrity: sha1-9m7Ncpg1eu5ElV8jWm71QhkQSxE=, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/babel-walk/download/babel-walk-3.0.0-canary-5.tgz}
@@ -1646,6 +1666,18 @@ packages:
     version: 3.2.4
     dev: true
 
+  registry.npmmirror.com/follow-redirects/1.14.5:
+    resolution: {integrity: sha1-8JpYSJgdPHcrU5Iwl3hSP42Fw4E=, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/follow-redirects/download/follow-redirects-1.14.5.tgz}
+    name: follow-redirects
+    version: 1.14.5
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dev: false
+
   registry.npmmirror.com/fs-extra/10.0.0:
     resolution: {integrity: sha1-n/YbZV3eU/s0qC34S7IUzoAuF8E=, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/fs-extra/download/fs-extra-10.0.0.tgz}
     name: fs-extra
@@ -2075,6 +2107,27 @@ packages:
     resolution: {integrity: sha1-y1vcdP8/UYkiNur3nWi8RFZKuBw=, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/picocolors/download/picocolors-1.0.0.tgz}
     name: picocolors
     version: 1.0.0
+
+  registry.npmmirror.com/pinia/2.0.4_typescript@4.5.2+vue@3.2.23:
+    resolution: {integrity: sha512-nAc2f9HmOcBbWRlnGDuBGedM1G6uFAR10FnJWP1/dgm1I2tM5jbgKL/3IgynP4mBnPCy//ky7g0WpCZl5Mmxsg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/pinia/download/pinia-2.0.4.tgz?cache=0&sync_timestamp=1637316020514&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fpinia%2Fdownload%2Fpinia-2.0.4.tgz}
+    id: registry.npmmirror.com/pinia/2.0.4
+    name: pinia
+    version: 2.0.4
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: ^4.4.4
+      vue: ^2.6.14 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': registry.npmmirror.com/@vue/devtools-api/6.0.0-beta.20.1
+      typescript: registry.npmmirror.com/typescript/4.5.2
+      vue: registry.npmmirror.com/vue/3.2.23
+      vue-demi: registry.npmmirror.com/vue-demi/0.12.1_vue@3.2.23
+    dev: false
 
   registry.npmmirror.com/postcss/8.4.3:
     resolution: {integrity: sha512-d5gVKo8ekrircqHOQNvSQk8dhGOuAfu1iP6dzfAlnAmcu7EBJ9cFuZG8B1KZK362aaEO3L1H+WM3ny9xQ29tFw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/postcss/download/postcss-8.4.3.tgz}
@@ -2694,6 +2747,24 @@ packages:
       vscode-pug-languageservice: registry.npmmirror.com/vscode-pug-languageservice/0.27.24
       vscode-typescript-languageservice: registry.npmmirror.com/vscode-typescript-languageservice/0.27.25
     dev: true
+
+  registry.npmmirror.com/vue-demi/0.12.1_vue@3.2.23:
+    resolution: {integrity: sha1-9+GO++z/0RqwadFHLXoG4xm0F0w=, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-demi/download/vue-demi-0.12.1.tgz}
+    id: registry.npmmirror.com/vue-demi/0.12.1
+    name: vue-demi
+    version: 0.12.1
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: registry.npmmirror.com/vue/3.2.23
+    dev: false
 
   registry.npmmirror.com/vue-tsc/0.3.0_typescript@4.5.2:
     resolution: {integrity: sha1-Ozhyv08dLkQJtXrb2CYDLiU9tAY=, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-tsc/download/vue-tsc-0.3.0.tgz}
