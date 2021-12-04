@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@types/node': ^16.11.10
   '@vitejs/plugin-vue': ^1.10.1
+  '@vueuse/core': ^7.1.2
   axios: ^0.24.0
   eslint: ^8.3.0
   husky: ^7.0.4
@@ -18,6 +19,7 @@ specifiers:
   vue-tsc: ^0.3.0
 
 dependencies:
+  '@vueuse/core': registry.npmmirror.com/@vueuse/core/7.1.2_vue@3.2.23
   axios: registry.npmmirror.com/axios/0.24.0
   pinia: registry.npmmirror.com/pinia/2.0.4_typescript@4.5.2+vue@3.2.23
   vant: registry.npmmirror.com/vant/3.3.1_vue@3.2.23
@@ -899,6 +901,43 @@ packages:
     resolution: {integrity: sha512-U+/Jefa0QfXUF2qVy9Dqlrb6HKJSr9/wJcM66wXmWcTOoqg7hOWzF4qruDle51pyF4x3wMn6TSH54UdjKjCKMA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/shared/download/@vue/shared-3.2.23.tgz}
     name: '@vue/shared'
     version: 3.2.23
+
+  registry.npmmirror.com/@vueuse/core/7.1.2_vue@3.2.23:
+    resolution: {integrity: sha512-SLoOPfhZdNRNUkZfx+wrHj6WycWdSw2RmNS8E4ngQ2kmBoJjRarGy51/GkGdjqHQqmhuwuFoNO2WaU0yBn3ffg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vueuse/core/download/@vueuse/core-7.1.2.tgz}
+    id: registry.npmmirror.com/@vueuse/core/7.1.2
+    name: '@vueuse/core'
+    version: 7.1.2
+    peerDependencies:
+      '@vue/composition-api': ^1.1.0
+      vue: ^2.6.0 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      vue:
+        optional: true
+    dependencies:
+      '@vueuse/shared': registry.npmmirror.com/@vueuse/shared/7.1.2_vue@3.2.23
+      vue: registry.npmmirror.com/vue/3.2.23
+      vue-demi: registry.npmmirror.com/vue-demi/0.12.1_vue@3.2.23
+    dev: false
+
+  registry.npmmirror.com/@vueuse/shared/7.1.2_vue@3.2.23:
+    resolution: {integrity: sha512-AjYh4y9S5FMOoHDsysqcXY/1mpqNTrnWUD50yaaiyf+5kGWQVIpAkkjKZlYSC/NHKxxCRn0cLR4nWMzceUWewQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vueuse/shared/download/@vueuse/shared-7.1.2.tgz}
+    id: registry.npmmirror.com/@vueuse/shared/7.1.2
+    name: '@vueuse/shared'
+    version: 7.1.2
+    peerDependencies:
+      '@vue/composition-api': ^1.1.0
+      vue: ^2.6.0 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      vue:
+        optional: true
+    dependencies:
+      vue: registry.npmmirror.com/vue/3.2.23
+      vue-demi: registry.npmmirror.com/vue-demi/0.12.1_vue@3.2.23
+    dev: false
 
   registry.npmmirror.com/acorn/7.4.1:
     resolution: {integrity: sha1-/q7SVZc9LndVW4PbwIhRpsY1IPo=, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/acorn/download/acorn-7.4.1.tgz}

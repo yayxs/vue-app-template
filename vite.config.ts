@@ -4,9 +4,9 @@ import vue from '@vitejs/plugin-vue'; // 支持vue3单文件组件
 // https://youzan.github.io/vant/v3/#/zh-CN/quickstart#fang-shi-er.-zai-vite-xiang-mu-zhong-an-xu-yin-ru-zu-jian
 import styleImport from 'vite-plugin-style-import'; // 组件按需导入
 // https://qastack.cn/programming/31173738/typescript-getting-error-ts2304-cannot-find-name-require
-const path = require('path');
-function resolve(dir: string) {
-  return path.join(__dirname, dir);
+import { resolve } from 'path';
+function pathResolve(dir: string) {
+  return resolve(process.cwd(), '.', dir);
 }
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -24,12 +24,16 @@ export default defineConfig({
   ],
   resolve: {
     // https://vitejs.dev/config/#resolve-alias
-    alias: {
-      '@': resolve('./src'),
-      '@assets': resolve('./src/assets'),
-      '@components': resolve('./src/components'),
-      '@store': resolve('./src/store'),
-      '@views': resolve('./src/views'),
-    },
+    alias: [
+      // /@/xxxx => src/xxxx
+      {
+        find: /\/@\//,
+        replacement: pathResolve('src') + '/',
+      },
+      {
+        find: /\/#\//,
+        replacement: pathResolve('types') + '/',
+      },
+    ],
   },
 });

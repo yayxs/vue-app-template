@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useToDoStoreWithOut } from '@/store/modules/todo';
+import { useToDoStoreWithOut } from '/@/store/modules/todo';
 import { ref, onMounted } from 'vue';
 import TodoItem from './TodoItem.vue';
 const loading = ref(false);

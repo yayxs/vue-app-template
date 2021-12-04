@@ -15,11 +15,8 @@
     "lib": ["esnext", "dom"],
     "types": ["vite/client", "node"],
     "paths": {
-      "@/*": ["src/*"],
-      "@assets/*": ["src/assets/*"],
-      "@components/*": ["src/components/*"],
-      "@store/*": ["src/store/*"],
-      "@views/*": ["src/views/*"]
+      "/@/*": ["src/*"],
+      "/#/*": ["types/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

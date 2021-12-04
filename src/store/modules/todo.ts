@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { defineStore } from 'pinia';
 
-import { store } from '@/store';
+import { store } from '/@/store';
 interface ToDoState {
   userId?: number;
   id: number;
